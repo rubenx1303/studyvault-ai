@@ -48,7 +48,8 @@ export function createLlmProvider(cfg: AppConfig): LlmProvider {
       });
     }
     case 'anthropic':
-      return new AnthropicLlm(l.model ?? 'claude-haiku-5-5', l.apiKey ?? '');
+      // Sin modelo configurado (LLM_MODEL) no se elige ninguno por defecto: se usa el modo extractivo.
+      return l.model ? new AnthropicLlm(l.model, l.apiKey ?? '') : new NoLlm();
     default:
       return new NoLlm();
   }
