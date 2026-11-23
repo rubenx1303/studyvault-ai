@@ -1,0 +1,42 @@
+{
+  "name": "studyvault",
+  "version": "0.1.0",
+  "private": true,
+  "description": "StudyVault AI — plataforma personal de estudio, gestión documental y RAG sobre materiales académicos.",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:demo": "node scripts/dev.mjs --demo",
+    "dev:api": "npm run dev -w @studyvault/api",
+    "dev:web": "npm run dev -w @studyvault/web",
+    "build": "npm run build -w @studyvault/web",
+    "start": "npm run start -w @studyvault/api",
+    "demo:seed": "npm run demo:seed -w @studyvault/api",
+    "moodle:login": "npm run moodle:login -w @studyvault/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm run test --workspaces --if-present",
+    "setup:transcription": "node scripts/setup-transcription.mjs",
+    "sync": "npm run sync -w @studyvault/api --",
+    "daily": "npm run daily -w @studyvault/api",
+    "daily:if-due": "npm run daily:if-due -w @studyvault/api"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.0",
+    "typescript-eslint": "^8.72.0"
+  }
+}

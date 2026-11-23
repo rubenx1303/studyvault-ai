@@ -1,0 +1,52 @@
+# ── Dependencias y builds ──
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+.vite/
+
+# ── Datos personales de StudyVault (NUNCA al repositorio) ──
+# Documentos sincronizados, base de datos, índices, modelos y secretos.
+data/
+data-*/
+!data-demo/.gitkeep
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+
+# ── Secretos y sesiones ──
+.env
+.env.*
+!.env.example
+secrets/
+*.secret
+*.dpapi
+browser-profile/
+storage-state*.json
+cookies*.json
+
+# ── Material académico: no versionar nunca documentos reales ──
+# (Los documentos de demo se generan con `npm run demo:seed`, no se versionan.)
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.doc
+*.ppt
+
+# ── Logs y SO ──
+logs/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editores ──
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
